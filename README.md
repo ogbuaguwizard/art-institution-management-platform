@@ -119,7 +119,9 @@ The platform combines a public-facing website with authenticated administrative 
 
 ### High-Level Architecture
 
-![High-Level System Architecture](images/Architecture.png)
+<p align="center">
+  <img src="images/Architecture.png" alt="Architecture" width="60%">
+</p>
 
 ---
 
@@ -320,13 +322,11 @@ Ticket Generation
                     Event Attendee
 ```
 
-> **\[DIAGRAM PLACEHOLDER — Event Registration & Ticket Lifecycle\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Event Details / Registration Page\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Event Registration Form\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Generated Digital Ticket\]**
+<p align="center">
+  <img src="images/event.png" alt="event" width="45%">
+  <img src="images/event2.png" alt="event" width="45%">
+  <img src="images/event3.png" alt="event" width="45%">
+</p>
 
 ---
 
