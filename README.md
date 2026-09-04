@@ -119,51 +119,7 @@ The platform combines a public-facing website with authenticated administrative 
 
 ### High-Level Architecture
 
-```text
-                         ┌──────────────────────────┐
-                         │      Public Website      │
-                         │                          │
-                         │ Gallery │ Academy │ Store│
-                         │ Studio │ Interior │ Events│
-                         └────────────┬─────────────┘
-                                      │
-                                      ▼
-                         ┌──────────────────────────┐
-                         │      Laravel Application │
-                         │                          │
-                         │ Controllers │ Services   │
-                         │ Policies    │ Models     │
-                         │ Notifications│ Jobs       │
-                         └───────┬─────────┬────────┘
-                                 │         │
-                   ┌─────────────┘         └──────────────┐
-                   ▼                                      ▼
-        ┌─────────────────────┐                 ┌─────────────────────┐
-        │ Administrative      │                 │ Participant Portal  │
-        │ Portal              │                 │                     │
-        │                     │                 │ Interns / Students  │
-        │ Admins / Moderators │                 │ Assignments         │
-        │ Management / Sales  │                 │ Attendance / Reports │
-        └──────────┬──────────┘                 └─────────────────────┘
-                   │
-                   ▼
-        ┌──────────────────────────┐
-        │       Database           │
-        │                          │
-        │ Users / Artists / Events │
-        │ Artworks / Programs      │
-        │ Sales / Inventory / etc.│
-        └──────────────────────────┘
-
-       External Services
-       ─────────────────
-       Cloudinary → Media storage
-       Mailjet    → Transactional email
-       Google     → Social authentication
-       Shared Hosting / SSH → Production
-```
-
-> \*\*\[DIAGRAM PLACEHOLDER — High-Level System Architecture\*\*\]Create a polished architecture diagram showing the public website, Laravel application, admin portal, participant portal, database, Cloudinary, Mailjet, Google authentication, and production hosting.
+![High-Level System Architecture](images/Architecture.png)
 
 ---
 
@@ -182,12 +138,11 @@ The gallery experience provides access to:
 - Exhibitions
 - Events
 - Related cultural and artistic content
+- Online Store
 
 The gallery is implemented as a distinct subdomain experience while remaining accessible through the primary website.
 
-> \*\*\[SCREENSHOT PLACEHOLDER — Gallery Homepage\*\*\]Show the gallery landing page and its navigation.
-
-> \*\*\[SCREENSHOT PLACEHOLDER — Gallery Subdomain\*\*\]Show the gallery operating as its own subdomain.
+![High-Level System Architecture](images/collection.png)![High-Level System Architecture](images/interior.png)
 
 ---
 
