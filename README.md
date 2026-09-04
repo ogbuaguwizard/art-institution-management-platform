@@ -515,7 +515,7 @@ The system provides a structured record of transactions and supports stock aware
 
 <p align="center">
   <img src="images/store.png" alt="store" width="45%">
-  <img src="images/store2.png" alt="store" width="45%">
+  <img src="images/store1.png" alt="store" width="45%">
 </p>
 
 ---
@@ -545,10 +545,6 @@ The platform includes a dedicated interior-art section where these works can be 
 - Pricing
 - Other relevant metadata
 
-> **\[SCREENSHOT PLACEHOLDER — Interior Art Gallery\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Interior Artwork Details\]**
-
 ---
 
 ### 17. Studio & Creative Operations
@@ -557,9 +553,6 @@ The studio represents the institution's creative production environment.
 
 The platform supports presentation and management of studio-related offerings, including creative work, courses, and available spaces. The institution also provides rooms/spaces that can be made available for booking or rental.
 
-> **\[SCREENSHOT PLACEHOLDER — Studio Page\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Available Rooms / Spaces\]**
 
 ---
 
@@ -591,16 +584,6 @@ Index / List
      └── Delete / Archive where applicable
 ```
 
-> **\[SCREENSHOT PLACEHOLDER — Admin Dashboard Overview\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Admin Navigation / Resource Management\]**
-
-### Administrative Dashboard
-
-The dashboard provides a high-level summary of important activity across the platform. It acts as an operational overview rather than requiring administrators to inspect each resource individually.
-
-> **\[SCREENSHOT PLACEHOLDER — Full Admin Dashboard\]**
-
 ---
 
 ## Authentication, Authorization & Access Control
@@ -629,58 +612,16 @@ Administrative access is controlled through roles and policies, enforced via Lar
 | **Regular Admin** | Broad administrative access; can manage permitted institutional resources; cannot create new administrators |
 | **Moderator** | Access restricted to assigned institutional sector(s) — e.g. a Gallery moderator may manage Artists, Artworks, Exhibitions, and Events, while a Studio moderator may manage Interior artworks, Courses, Programs, and other studio-related resources |
 
-> **\[DIAGRAM PLACEHOLDER — Admin Role & Authorization Matrix\]**
-
-Suggested diagram:
-
-```text
-Super Admin
-     │
-     ├── Full System Access
-     └── Manage Administrators
-
-Regular Admin
-     │
-     └── Broad System Access
-         └── Cannot Add Administrators
-
-Moderator
-     │
-     └── Sector-Based Access
-          ├── Gallery
-          ├── Studio
-          └── Other Assigned Areas
-```
 
 ---
 
-## Business Logic & Service Layer
+## Business Logic & Application Architecture
 
-Important domain operations are separated into dedicated services instead of placing all business logic directly inside controllers.
+The application follows a structured separation-of-concerns approach, keeping business logic and application responsibilities separate from controllers.
 
-| Service | Purpose |
-| --- | --- |
-| **Onboarding Service** | Handles the transition from an accepted application into an active participant/user |
-| **Sales Service** | Centralizes sale creation, sale items, quantity, unit price, discounts, payment methods, seller/admin information, and transaction processing |
-| **Exhibition Event Service** | Maintains the relationship between exhibitions and events, preserving the rule that every exhibition is an event, but not every event is an exhibition |
+Dedicated **services** handle domain and business operations, while **jobs** handle asynchronous and resource-intensive tasks. **Notifications**, **policies**, **form requests**, and **middleware** are also organized into their respective layers, keeping controllers focused primarily on coordinating application flow rather than containing implementation logic.
 
-### Onboarding Service Flow
-
-```text
-Application
-    ↓
-Acceptance
-    ↓
-Onboarding Service
-    ↓
-Participant
-    ↓
-User / Portal Access
-    ↓
-Welcome Notification
-```
-
-> **\[DIAGRAM PLACEHOLDER — Service Layer / Domain Logic Architecture\]**
+This structure improves maintainability, reusability, testability, and makes the application easier to extend as new features and workflows are introduced.
 
 ---
 
@@ -698,35 +639,9 @@ The application uses a broad relational domain model representing the institutio
 | Commerce | Supply, Inventory, Sale, SaleItem |
 | System | AuditLog, Notification |
 
-> \*\*\[DIAGRAM PLACEHOLDER — Entity Relationship Diagram\*\*\]For the public case study, the ERD should focus on major relationships rather than exposing implementation-specific database details.
-
-Suggested relationships to visualize:
-
-```text
-Program
-  └── Intakes
-       └── Applications
-            └── Program Enrollment
-                 └── Participant
-                      ├── Assignments
-                      ├── Attendance
-                      ├── Evaluations
-                      └── Certificates
-
-Event
-  ├── Registrations
-  │     └── Tickets
-  │            └── Check-ins
-  │
-  └── Exhibition (when event_type = exhibition)
-
-Artist
-  └── Artworks
-
-Sale
-  └── Sale Items
-       └── Supplies / Store Items
-```
+<p align="center">
+  <img src="images/ERD.png" alt="ERD" width="60%">
+</p>
 
 ---
 
