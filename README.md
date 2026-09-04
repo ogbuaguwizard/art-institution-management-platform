@@ -142,7 +142,10 @@ The gallery experience provides access to:
 
 The gallery is implemented as a distinct subdomain experience while remaining accessible through the primary website.
 
-![High-Level System Architecture](images/collection.png)![High-Level System Architecture](images/interior.png)
+<p align="center">
+  <img src="images/collection.png" alt="Collection" width="45%">
+  <img src="images/interior.png" alt="Interior" width="45%">
+</p>
 
 ---
 
@@ -161,9 +164,10 @@ Artist information can include:
 
 The artist management workflow is designed to provide a structured institutional record rather than simply storing a name and photograph.
 
-> **\[SCREENSHOT PLACEHOLDER — Artist Management Resource\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Artist Profile / Details Page\]**
+<p align="center">
+  <img src="images/artist.png" alt="artist" width="45%">
+  <img src="images/artist2.png" alt="artist" width="45%">
+</p>
 
 ---
 
@@ -211,13 +215,12 @@ Collector Scans QR Code
 Artwork Information Online
 ```
 
-> **\[DIAGRAM PLACEHOLDER — Artwork QR Lifecycle\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Artwork Selection / QR Generation Interface\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Generated Artwork Label PDF\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Public Artwork Page After QR Scan\]**
+<p align="center">
+  <img src="images/artwork.png" alt="artwork" width="45%">
+  <img src="images/artwork2.png" alt="artwork" width="45%">
+  <img src="images/artwork3.png" alt="artwork" width="45%">
+  <img src="images/artwork4.png" alt="artwork" width="45%">
+</p>
 
 ---
 
@@ -261,8 +264,6 @@ When an administrator creates an event whose type is `exhibition`, the platform 
                 Functionality
 ```
 
-> **\[DIAGRAM PLACEHOLDER — Event/Exhibition Domain Relationship\]**
-
 ---
 
 ### 5. Event Management & Registration
@@ -281,7 +282,7 @@ Events can support:
 - Featured imagery
 - Exhibition-specific information where applicable
 
-Users can register for eligible events.
+Users can register for events.
 
 #### Automated Ticketing
 
