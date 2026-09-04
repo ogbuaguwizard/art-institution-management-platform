@@ -653,8 +653,6 @@ Application received · Application submitted · Application accepted/rejected �
 
 Transactional emails are handled using **Mailjet**.
 
-> **\[DIAGRAM PLACEHOLDER — Notification/Event Flow\]**
-
 ---
 
 ## Media & File Management
@@ -663,41 +661,11 @@ The platform uses **Cloudinary** for application media storage. Images are uploa
 
 Temporary generated assets, such as event flyers, follow a different lifecycle and can be automatically removed after a defined period.
 
-> **\[DIAGRAM PLACEHOLDER — Media Upload & Storage Architecture\]**
-
-Suggested flow:
-
-```text
-Application
-     ↓
-Image Upload
-     ↓
-Laravel
-     ↓
-Cloudinary
-     ↓
-Stored Media URL
-     ↓
-Database Reference
-     ↓
-Public/Admin Display
-```
-
----
-
-## Document & PDF Generation
-
-The platform generates digital documents for several workflows, including event tickets, artwork QR labels, certificates, and other generated institutional documents. Generated files can be delivered electronically or prepared for printing.
-
-> **\[SCREENSHOT PLACEHOLDER — Generated PDF Document Examples\]**
-
 ---
 
 ## Automated Maintenance
 
 The application includes custom commands for automated housekeeping. For example, temporary generated resources such as event tickets and event flyers can be automatically removed after their intended retention period, preventing unnecessary accumulation of temporary files and keeping the application's storage footprint manageable.
-
-> **\[DIAGRAM PLACEHOLDER — Automated Cleanup Lifecycle\]**
 
 ---
 
@@ -741,16 +709,6 @@ GitHub Actions
               Production App
 ```
 
-> **\[DIAGRAM PLACEHOLDER — CI/CD Deployment Pipeline\]**
-
-### Deployment Security
-
-Production credentials and SSH authentication details are not stored in the repository. Deployment secrets are supplied through GitHub Actions' secret management.
-
-**No private keys, passwords, API credentials, or production environment variables should appear in this public case-study repository.**
-
----
-
 ## Security Considerations
 
 Security was treated as a core application concern. The platform uses Laravel's built-in security mechanisms and application-level authorization controls.
@@ -767,30 +725,6 @@ Security was treated as a core application concern. The platform uses Laravel's 
 
 The application also uses Laravel policies to ensure that authorization is enforced at the application layer rather than relying solely on what users can see in the interface.
 
-> **\[DIAGRAM PLACEHOLDER — Security & Authorization Layers\]**
-
-Suggested structure:
-
-```text
-Request
-  ↓
-Authentication
-  ↓
-Guard
-  ↓
-Role / User Context
-  ↓
-Policy Authorization
-  ↓
-Validation
-  ↓
-Controller
-  ↓
-Service / Business Logic
-  ↓
-Database
-```
-
 ---
 
 ## Third-Party Integrations
@@ -802,50 +736,6 @@ Database
 | Google / Laravel Socialite | Google authentication |
 | GitHub Actions | CI/CD automation |
 | Shared Hosting + SSH | Production hosting and server operations |
-
----
-
-## Technology Stack
-
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)![Alpine.js](https://img.shields.io/badge/Alpine.js-8BC0D0?style=flat-square&logo=alpinedotjs&logoColor=black)![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)![MySQL](https://img.shields.io/badge/Relational_DB-4479A1?style=flat-square&logo=mysql&logoColor=white)![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=flat-square&logo=cloudinary&logoColor=white)![Mailjet](https://img.shields.io/badge/Mailjet-FF6B6B?style=flat-square&logo=mailjet&logoColor=white)![Google](https://img.shields.io/badge/Google_OAuth-4285F4?style=flat-square&logo=google&logoColor=white)![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)![Composer](https://img.shields.io/badge/Composer-885630?style=flat-square&logo=composer&logoColor=white)![SSH](https://img.shields.io/badge/SSH-000000?style=flat-square&logo=gnu-bash&logoColor=white)| Layer | Technologies | | --- | --- | | **Backend** | PHP, Laravel, Eloquent ORM, Laravel Authentication & Authorization, Laravel Policies, Laravel Notifications, Laravel Jobs / Commands | | **Frontend** | Alpine.js, Tailwind CSS, server-rendered Laravel views | | **Database** | Relational database architecture, Laravel migrations, Eloquent relationships | | **Infrastructure & DevOps** | Shared hosting, SSH, FTP-based deployment, GitHub Actions, Composer | | **External Services** | Cloudinary, Mailjet, Google authentication via Laravel Socialite | | **Document / QR Workflows** | PDF generation, QR-code generation, printable artwork labels, digital event tickets |
-
----
-
-## Notable Laravel Architecture
-
-The project demonstrates several patterns commonly used in production Laravel applications.
-
-| Layer | Responsibility |
-| --- | --- |
-| **Models** | Represent domain entities and database relationships |
-| **Controllers** | Handle HTTP requests and coordinate application workflows |
-| **Policies** | Enforce resource-level authorization |
-| **Services** | Encapsulate complex business operations and domain workflows |
-| **Notifications** | Handle user/admin communication |
-| **Commands** | Handle recurring or administrative maintenance operations |
-| **Jobs** | Allow suitable tasks to be processed asynchronously where required |
-| **Migrations** | Version and manage database structure |
-| **Guards** | Separate normal-user and administrative authentication contexts |
-
----
-
-## Resource-Oriented Admin Architecture
-
-Administrative resources follow a consistent structure, making the system easier to maintain and extend.
-
-```text
-Resource
-  │
-  ├── Index
-  ├── Create
-  ├── Store
-  ├── Show
-  ├── Edit
-  ├── Update
-  └── Delete
-```
-
-This approach is applied across major areas such as Artists, Artworks, Exhibitions, Events, Programs, Intakes, Applications, Participants, Courses, Inventory, Supplies, Sales, Interior artworks, and other institutional resources.
 
 ---
 
@@ -876,64 +766,9 @@ Image Processing
   ↓
 Improved / Modified Image
 ```
-
-> **\[SCREENSHOT PLACEHOLDER — AI Playground Interface\]**
-
-> **\[DIAGRAM PLACEHOLDER — AI-Assisted Image Workflow\]**
-
-> **Note:** The AI Playground is an evolving component of the platform and is not presented as the complete core of the production system.
-
----
-
-## Platform Structure
-
-```text
-Peter Fleming Arts
-│
-├── Gallery
-│   ├── Artists
-│   ├── Artworks / Collections
-│   ├── Exhibitions
-│   └── Events
-│
-├── Academy
-│   ├── Courses
-│   ├── Workshops
-│   └── Programs
-│
-├── Store
-│   ├── Art Supplies
-│   └── Sales
-│
-├── Interior
-│   └── Interior Artworks
-│
-├── Studio
-│   ├── Creative Production
-│   └── Spaces / Rooms
-│
-├── Events
-│   ├── Registration
-│   ├── Tickets
-│   └── Check-in
-│
-├── Participant Portal
-│   ├── Assignments
-│   ├── Attendance
-│   ├── Reports
-│   └── Certificates
-│
-└── Administrative Portal
-    ├── Management
-    ├── Operations
-    ├── Users
-    ├── Applications
-    ├── Inventory
-    └── Reporting
-```
-
-> **\[DIAGRAM PLACEHOLDER — Complete Platform Map\]**
-
+<p align="center">
+  <img src="images/ai.png" alt="Ai Playground" width="60%">
+</p>
 ---
 
 ## Engineering Highlights
@@ -950,141 +785,6 @@ This project demonstrates experience beyond basic CRUD development.
 | **Production Deployment** | Configured and maintained a production Laravel deployment on shared hosting using CI/CD, FTP, SSH, Composer, migrations, and environment-based secrets |
 | **External Integrations** | Integrated cloud media storage, transactional email, social authentication, PDF generation, and QR-code workflows |
 | **Real-World Operational Software** | Designed around real institutional workflows rather than being a demonstration-only CRUD application |
-
----
-
-## Project Screenshots
-
-The following section should contain carefully selected screenshots demonstrating the breadth and quality of the platform.
-
-| \# | Recommended Screenshot |
-| --- | --- |
-| 1 | Homepage / Public Platform |
-| 2 | Gallery |
-| 3 | Artist Management |
-| 4 | Artwork Management |
-| 5 | Artwork QR Label Generator |
-| 6 | Exhibition Management |
-| 7 | Event Management |
-| 8 | Event Registration |
-| 9 | Digital Event Ticket |
-| 10 | QR Check-In |
-| 11 | Program Management |
-| 12 | Application Management |
-| 13 | Participant Portal |
-| 14 | Assignment Management |
-| 15 | Attendance |
-| 16 | Certificate |
-| 17 | Store Dashboard |
-| 18 | Inventory |
-| 19 | Sales Registry |
-| 20 | Interior Art |
-| 21 | Studio |
-| 22 | Admin Dashboard |
-| 23 | AI Playground |
-
-> **\[SCREENSHOT GALLERY PLACEHOLDER — Add a curated collection of the strongest UI screenshots here.\]**
-
----
-
-## Recommended Technical Diagrams
-
-For this public case study, the following diagrams would communicate the architecture particularly well.
-
-### 1. System Architecture
-
-```text
-Users
- ↓
-Public Website / Admin Portal / Participant Portal
- ↓
-Laravel Application
- ↓
-Services / Policies / Models
- ↓
-Database
- ↓
-External Services
-```
-
-### 2. Domain / Entity Relationship Diagram
-
-Focus on the major relationships between Artists, Artworks, Events, Exhibitions, Registrations, Tickets, Programs, Intakes, Applications, Participants, Assignments, Sales, and Inventory.
-
-### 3. Authorization Diagram
-
-```text
-Super Admin
-Regular Admin
-Moderator
-      ↓
-Authentication Guards
-      ↓
-Policies
-      ↓
-Sector / Resource Permissions
-```
-
-### 4. Event Lifecycle
-
-```text
-Create Event
- ↓
-Publish
- ↓
-Registration
- ↓
-Ticket Generation
- ↓
-Email Delivery
- ↓
-QR Scan
- ↓
-Check-In
-```
-
-### 5. Participant Lifecycle
-
-```text
-Program
- ↓
-Intake
- ↓
-Application
- ↓
-Review
- ↓
-Acceptance
- ↓
-Onboarding
- ↓
-Participant
- ↓
-Assignments / Attendance / Evaluation
- ↓
-Certificate
-```
-
-### 6. CI/CD Pipeline
-
-```text
-Git Push
- ↓
-GitHub Actions
- ↓
-FTP Deployment
- ↓
-SSH
- ↓
-Composer
- ↓
-Migrations
- ↓
-Storage Link
- ↓
-Production
-```
-
 ---
 
 ## Engineering Philosophy
@@ -1092,17 +792,6 @@ Production
 The platform was developed with an emphasis on **maintainability, separation of concerns, security, automation, and extensibility**.
 
 The objective was not simply to make individual pages work, but to build a foundation capable of supporting an evolving institution with multiple departments and different categories of users.
-
-A major architectural principle was to model real institutional relationships accurately. For example:
-
-> **An exhibition is an event, but an event is not necessarily an exhibition.**
-
-Similarly:
-
-> **A program can have multiple intakes, while each intake can contain multiple applications and participants.**
-
-These domain relationships inform the application's models, services, workflows, and user interfaces.
-
 ---
 
 ## What This Project Demonstrates
@@ -1118,47 +807,6 @@ These domain relationships inform the application's models, services, workflows,
 | Commerce & Operations | Inventory management, sales management, event registration, participant management |
 | DevOps | CI/CD, shared-hosting deployment, SSH server operations, GitHub Actions, production application maintenance |
 | Innovation | AI-assisted creative tooling |
-
----
-
-## Confidentiality & Portfolio Disclaimer
-
-> **This repository is a portfolio case study and documentation of my work on the Peter Fleming Arts platform.**
->
-> The original application and its source code remain private because the software was developed for **Peterfleming Arts Limited** and may contain proprietary business logic, intellectual property, internal workflows, private information, and other confidential material.
->
-> This public repository therefore contains **documentation, selected screenshots, architectural explanations, and project information only**. It does not intentionally expose proprietary source code, production credentials, private user information, environment variables, API keys, SSH keys, passwords, or other confidential infrastructure details.
->
-> Screenshots and technical descriptions included here are presented strictly for professional portfolio purposes.
-
----
-
-## Public Repository Safety Checklist
-
-Before publishing this case study, verify that the repository contains **none** of the following:
-
-| Category | Items to Exclude |
-| --- | --- |
-| Credentials & Secrets | `.env` files, API keys, Cloudinary secrets, Mailjet credentials, SSH private keys, GitHub deployment secrets, database credentials, production passwords, authentication tokens |
-| Private Data | Private user records, applicant CVs/resumes, user photographs, personal contact information |
-| Infrastructure Details | Private admin URLs where inappropriate, signed URLs containing sensitive information, internal server paths, internal hostnames |
-| Proprietary Material | Confidential business documents, proprietary source code |
-
-Also review screenshots carefully for: email addresses, phone numbers, names of private individuals, password fields, API responses, browser URLs, admin credentials, database IDs, internal hostnames, and private documents.
-
----
-
-## Conclusion
-
-The Peter Fleming Arts platform represents a transition from a conventional institutional website toward a **unified digital operating platform**.
-
-It brings together public cultural experiences and internal operational workflows across:
-
-**Gallery → Artists → Artworks → Exhibitions → Events → Academy → Programs → Participants → Store → Inventory → Sales → Studio → Interior Art → Administration**
-
-The system was designed to reduce fragmented processes, centralize institutional information, automate repetitive tasks, and provide different categories of users with appropriate digital experiences.
-
-From an engineering perspective, the project demonstrates the ability to take a real-world organization with multiple departments and complex workflows and translate those requirements into a maintainable full-stack Laravel application.
 
 ---
 
