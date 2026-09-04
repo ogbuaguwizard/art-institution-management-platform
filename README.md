@@ -54,7 +54,7 @@
 
 ## Project Overview
 
-**Peter Fleming Arts Limited** is an art institution with multiple interconnected areas of operation, including:
+**Peterfleming Arts Limited** is an art institution with multiple interconnected areas of operation, including:
 
 | Area | Description |
 | --- | --- |
@@ -1274,7 +1274,7 @@ These domain relationships inform the application's models, services, workflows,
 
 > **This repository is a portfolio case study and documentation of my work on the Peter Fleming Arts platform.**
 >
-> The original application and its source code remain private because the software was developed for **Peter Fleming Arts Limited** and may contain proprietary business logic, intellectual property, internal workflows, private information, and other confidential material.
+> The original application and its source code remain private because the software was developed for **Peterfleming Arts Limited** and may contain proprietary business logic, intellectual property, internal workflows, private information, and other confidential material.
 >
 > This public repository therefore contains **documentation, selected screenshots, architectural explanations, and project information only**. It does not intentionally expose proprietary source code, production credentials, private user information, environment variables, API keys, SSH keys, passwords, or other confidential infrastructure details.
 >
@@ -1315,7 +1315,7 @@ From an engineering perspective, the project demonstrates the ability to take a 
 
 | Category | Details |
 | --- | --- |
-| **Organization** | Peter Fleming Arts Limited |
+| **Organization** | Peterfleming Arts Limited |
 | **Project Type** | Institutional Management & Digital Experience Platform |
 | **Backend** | Laravel / PHP |
 | **Frontend** | Alpine.js / Tailwind CSS |
