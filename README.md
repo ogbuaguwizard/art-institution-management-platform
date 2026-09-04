@@ -21,34 +21,25 @@
 
 ## Table of Contents
 
- 1. [Project Overview](#project-overview)
- 2. [My Role](#my-role)
- 3. [Platform Architecture](#platform-architecture)
- 4. [Core Platform Areas](#core-platform-areas)
- 5. [Administrative Portal](#administrative-portal)
- 6. [Authentication, Authorization & Access Control](#authentication-authorization--access-control)
- 7. [Business Logic & Service Layer](#business-logic--service-layer)
- 8. [Domain Model](#domain-model)
- 9. [Notifications](#notifications)
+1. [Project Overview](#project-overview)
+2. [My Role](#my-role)
+3. [Platform Architecture](#platform-architecture)
+4. [Core Platform Areas](#core-platform-areas)
+5. [Administrative Portal](#administrative-portal)
+6. [Authentication, Authorization & Access Control](#authentication-authorization--access-control)
+7. [Business Logic & Application Architecture](#business-logic--application-architecture)
+8. [Domain Model](#domain-model)
+9. [Notifications](#notifications)
 10. [Media & File Management](#media--file-management)
-11. [Document & PDF Generation](#document--pdf-generation)
-12. [Automated Maintenance](#automated-maintenance)
-13. [Deployment & CI/CD](#deployment--cicd)
-14. [Security Considerations](#security-considerations)
-15. [Third-Party Integrations](#third-party-integrations)
-16. [Technology Stack](#technology-stack)
-17. [Notable Laravel Architecture](#notable-laravel-architecture)
-18. [Resource-Oriented Admin Architecture](#resource-oriented-admin-architecture)
-19. [AI Playground](#ai-playground)
-20. [Platform Structure](#platform-structure)
-21. [Engineering Highlights](#engineering-highlights)
-22. [Project Screenshots](#project-screenshots)
-23. [Recommended Technical Diagrams](#recommended-technical-diagrams)
-24. [Engineering Philosophy](#engineering-philosophy)
-25. [What This Project Demonstrates](#what-this-project-demonstrates)
-26. [Confidentiality & Portfolio Disclaimer](#confidentiality--portfolio-disclaimer)
-27. [Public Repository Safety Checklist](#public-repository-safety-checklist)
-28. [Project Information](#project-information)
+11. [Automated Maintenance](#automated-maintenance)
+12. [Deployment & CI/CD](#deployment--cicd)
+13. [Security Considerations](#security-considerations)
+14. [Third-Party Integrations](#third-party-integrations)
+15. [AI Playground](#ai-playground)
+16. [Engineering Highlights](#engineering-highlights)
+17. [Engineering Philosophy](#engineering-philosophy)
+18. [What This Project Demonstrates](#what-this-project-demonstrates)
+19. [Project Information](#project-information)
 
 ---
 
@@ -769,6 +760,7 @@ Improved / Modified Image
 <p align="center">
   <img src="images/ai.png" alt="Ai Playground" width="60%">
 </p>
+
 ---
 
 ## Engineering Highlights
