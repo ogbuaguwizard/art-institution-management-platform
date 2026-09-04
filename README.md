@@ -350,9 +350,6 @@ Check-In Record
 Attendee Marked Present
 ```
 
-> **\[SCREENSHOT PLACEHOLDER — Mobile Check-In Scanner\]**
-
-> **\[DIAGRAM PLACEHOLDER — Ticket Verification & Check-In Flow\]**
 
 ---
 
@@ -389,7 +386,6 @@ Program
 
 This allows the institution to create a program once and manage multiple enrollment periods independently.
 
-> **\[DIAGRAM PLACEHOLDER — Program → Intake → Application → Participant Lifecycle\]**
 
 ---
 
@@ -427,13 +423,12 @@ Administrative Review
 Accepted      Rejected          │
 │                               │
 ▼                               │
-Participant Onboarding           │
+Participant Onboarding          │
 │                               │
 ▼                               │
 Participant Record              │
 ```
 
-> **\[DIAGRAM PLACEHOLDER — Application Lifecycle\]**
 
 ---
 
@@ -468,10 +463,6 @@ The system supports workflows around:
 
 This creates a digital feedback loop between administrators and participants.
 
-> **\[SCREENSHOT PLACEHOLDER — Participant Assignment Dashboard\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Admin Assignment Management\]**
-
 ---
 
 ### 12. Attendance & Reports
@@ -487,10 +478,6 @@ The platform also supports reporting workflows such as:
 
 The goal is to replace fragmented paper-based processes with structured digital records.
 
-> **\[SCREENSHOT PLACEHOLDER — Attendance Management\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Participant Reports\]**
-
 ---
 
 ### 13. Certificates
@@ -498,10 +485,6 @@ The goal is to replace fragmented paper-based processes with structured digital 
 Administrators can issue certificates to participants through the platform.
 
 The certificate workflow is connected to participant records and can trigger notifications to the recipient.
-
-> **\[SCREENSHOT PLACEHOLDER — Certificate Generation / Issuance Interface\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Example Certificate Preview\]**
 
 ---
 
@@ -530,13 +513,10 @@ The platform includes management functionality for the institution's art-supply 
 
 The system provides a structured record of transactions and supports stock awareness.
 
-> **\[SCREENSHOT PLACEHOLDER — Store Dashboard\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Inventory / Supplies Management\]**
-
-> **\[SCREENSHOT PLACEHOLDER — Sales Registry\]**
-
-> **\[DIAGRAM PLACEHOLDER — Sales → Stock Update Flow\]**
+<p align="center">
+  <img src="images/store.png" alt="store" width="45%">
+  <img src="images/store2.png" alt="store" width="45%">
+</p>
 
 ---
 
